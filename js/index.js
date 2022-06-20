@@ -1,3 +1,31 @@
+
+class Producto {
+  constructor(nombre, precio) {
+      this.nombre  = nombre.toUpperCase(nombre);
+      this.precio  = parseFloat(precio);
+      this.vendido = false;
+  }
+  sumaIva() {
+      this.precio = this.precio * 1.21;
+  }
+}
+
+const productos = [];
+productos.push(new Producto("camisa", "15999"));
+productos.push(new Producto("blusa", "11750"));
+productos.push(new Producto("pantalon", "14220"));
+
+
+let nombreProducto = prompt('ingrese nombre del producto nuevo')
+let precioProducto = prompt('ingrese precio del producto nuevo')
+productos.push(new Producto(nombreProducto, precioProducto));
+
+for (const producto of productos)
+  producto.sumaIva();
+
+console.log(productos);
+
+
 // let precioProducto = 1000;
 // let interes = 0;
 
@@ -21,3 +49,4 @@
 //     default:
 //     break;
 // }
+
