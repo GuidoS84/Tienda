@@ -11,13 +11,13 @@ class Producto {
 }
 
 const productos = [];
-productos.push(new Producto("camisa", "15999"));
-productos.push(new Producto("blusa", "11750"));
-productos.push(new Producto("pantalon", "14220"));
+productos.push(new Producto("camisa", "15000"));
+productos.push(new Producto("blusa", "11500"));
+productos.push(new Producto("pantalon", "14200"));
 
 
-let nombreProducto = prompt('ingrese nombre del producto nuevo')
-let precioProducto = prompt('ingrese precio del producto nuevo')
+let nombreProducto = prompt('Cargue nombre de producto nuevo')
+let precioProducto = prompt('Cargue precio del producto nuevo')
 productos.push(new Producto(nombreProducto, precioProducto));
 
 for (const producto of productos)
@@ -25,28 +25,7 @@ for (const producto of productos)
 
 console.log(productos);
 
+let productoElegido = prompt("Ingrese nombre de producto que desea comprar");
+const resultado = productos.find((el) => el.nombre === productoElegido.toUpperCase(productoElegido));
 
-// let precioProducto = 1000;
-// let interes = 0;
-
-// let seleccion = prompt("SELECCIONAR CUOTAS \n 1 - 3 CUOTAS \n 2 - 6 CUOTAS \n 3 - 12 CUOTAS ");
-
-// function recargo(precioProducto, interes){
-//     return precioProducto + ((precioProducto * interes)/100);
-// }
-// console.log(recargo(precioProducto, 10));
-
-// switch (seleccion) {
-//     case "3":
-//     alert(recargo(precioProducto, 15));
-//     break;
-//     case "6":
-//     alert(recargo(precioProducto, 30));
-//     break;
-//     case "12":
-//     alert(recargo(precioProducto, 50));
-//     break;
-//     default:
-//     break;
-// }
-
+console.log(resultado);
