@@ -88,10 +88,6 @@ body {
   height: auto;
 }
 
-#cards .btn {
-  display: none;
-}
-
 @media screen and (min-width: 768px) {
   #cards {
     -ms-grid-columns: 1fr 1fr;

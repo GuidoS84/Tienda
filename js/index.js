@@ -1,31 +1,53 @@
-
+// PRODUCTO
 class Producto {
-  constructor(nombre, precio) {
+  constructor(id, nombre, precio, img) {
+      this.id = parseFloat (id);
       this.nombre  = nombre.toUpperCase(nombre);
       this.precio  = parseFloat(precio);
-      this.vendido = false;
-  }
+      this.img  = img;
+      
+    }
   sumaIva() {
       this.precio = this.precio * 1.21;
   }
 }
 
+// ARRAYS
 const productos = [];
-productos.push(new Producto("camisa", "15000"));
-productos.push(new Producto("blusa", "11500"));
-productos.push(new Producto("pantalon", "14200"));
-
-
-let nombreProducto = prompt('Cargue nombre de producto nuevo')
-let precioProducto = prompt('Cargue precio del producto nuevo')
-productos.push(new Producto(nombreProducto, precioProducto));
+productos.push(new Producto(1,"camisa", "15000", "./img/Galeria/IMG_0758-550x550.jpg"));
+productos.push(new Producto(2,"blusa", "11500", "./img/Galeria/D04B7B09-2904-411D-9A57-0E394E9F2B51-550x550.jpg" ));
+productos.push(new Producto(3, "pantalon", "14200", "./img/Galeria/WhatsApp-Image-2022-04-21-at-9.08.13-AM-1100x1100.jpeg"));
+productos.push(new Producto(4, "remera", "4999", "./img/Galeria/IMG_8631-300x300.jpg"));
+productos.push(new Producto(5, "remera", "4999", "./img/Galeria/IMG_8507-1100x1100.jpg"));
+productos.push(new Producto(6, "remera", "4999", "./img/Galeria/74865E44-25AE-4B02-80C4-93DF32E59FEE-1100x1100.jpeg"));
+productos.push(new Producto(7, "remera", "4999", "./img/Galeria/WhatsApp-Image-2022-05-31-at-4.44.36-PM-550x550.jpeg"));
+productos.push(new Producto(8, "remera", "4999", "./img/Galeria/WhatsApp-Image-2022-06-03-at-7.59.16-AM-1-550x550.jpeg" ));
 
 for (const producto of productos)
   producto.sumaIva();
 
 console.log(productos);
 
-let productoElegido = prompt("Ingrese nombre de producto que desea comprar");
-const resultado = productos.find((el) => el.nombre === productoElegido.toUpperCase(productoElegido));
+//DOM
 
-console.log(resultado);
+productos.forEach(producto => {
+  let cardProd = document.createElement('div')
+  cardProd.innerHTML = `
+  <div class="card">
+                <div class="card-body">
+                  <img src="${producto.img}" class="card-img-top" alt="...">
+                  <h5 class="card-title">${producto.nombre}</h5>
+                  <p class="card-text">$${producto.precio}</p>
+                  <button id="comprar" onclick="Comprar(${producto.id})"  class="btn btn-primary">Comprar</button>
+                </div>  
+  </div>
+  
+  `
+  cards.append(cardProd);
+})
+
+
+
+
+
+
