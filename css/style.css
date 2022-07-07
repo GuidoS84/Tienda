@@ -22,6 +22,27 @@
   text-transform: uppercase;
 }
 
+#boton-carrito {
+  border: none;
+  color: royalblue;
+  font-size: 20px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px 20px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+#boton-carrito:hover {
+  cursor: pointer;
+  color: white;
+  background-color: royalblue;
+}
+
+#boton-carrito:focus {
+  outline: none;
+}
+
 .contacto {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -99,6 +120,7 @@ body {
   .cards {
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 5px;
   }
 }
 
