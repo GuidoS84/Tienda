@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- bootstrap -->
+    <title>LOVERS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <!-- iconos -->
-    <script src="https://kit.fontawesome.com/6a50137132.js" crossorigin="anonymous"></script>
-    <!-- CSS -->
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    
 </head>
 <body>
     <header  id="nav" class="header">
@@ -27,7 +26,7 @@
                     <a class="nav-link active" aria-current="page" href="./tienda.html">Tienda</a>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link" id="boton-carrito" href="./carrito.html"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span</button>
+                    <button class="nav-link" id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span</button>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./contacto.html">Contactanos</a>
@@ -37,17 +36,19 @@
             </div>
         </nav>
     </header>
-
     <main>
         <section class="home">
             <img class="home-picture" src="./img/pexels-ivan-mudruk-11612904.jpg" alt="">
         </section>
-        
+   
+    
         <section id="container">
             <div id="cardProd" class="cards"></div>
         </section>   
     
     </main>
+       
+
 
     <div class="modal-contenedor">
         <div class="modal-carrito">
@@ -63,9 +64,8 @@
             <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
             <button id="vaciar-carrito" class="boton-agregar">Vaciar carrito</button>
         </div>
-    </div> 
+    </div>
 
-  
 
     <footer class="footer">
         <div class="redes">
@@ -80,10 +80,8 @@
         </ul>
         <p class="copyright">Guido Serbali © 2022</p>
     </footer>
-
-    
-
 <script src="./js/index.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>  
+<script src="./js/modal.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>  
 </body>
 </html>
