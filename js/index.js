@@ -5,7 +5,7 @@ class Producto {
         this.nombre  = nombre.toUpperCase(nombre);
         this.precio  = parseFloat(precio);
         this.cantidad = parseFloat(cantidad);
-        this.img  = img;
+        this.img  = img
         
       }
     sumaIva() {
@@ -15,14 +15,15 @@ class Producto {
   
   // ARRAYS
   const productos = [];
-  productos.push(new Producto(0,"camisa", "12000","1", './img\galeria\D04B7B09-2904-411D-9A57-0E394E9F2B51-550x550.jpg'));
-  productos.push(new Producto(1,"blusa", "11500", "1", ));
-  productos.push(new Producto(2, "pantalon", "14200", "1", ""));
-  productos.push(new Producto(3, "remera", "4999", "1", "" ));
-  productos.push(new Producto(4, "Bluza", "4999", "1", ""));
-  productos.push(new Producto(5, "remera", "4999", "1", ""));
-  productos.push(new Producto(6, "remera", "4999", "1", ""));
-  productos.push(new Producto(7, "remera", "4999", "1", "" ));
+  
+  productos.push(new Producto(0,"camisa", "12000","1", './img/imagen1.jpg'));
+  productos.push(new Producto(1,"blusa", "11500", "1", './img/imagen2.jpg'));
+  productos.push(new Producto(2, "pantalon", "14200", "1", './img/imagen3.jpg'));
+  productos.push(new Producto(3, "remera", "4999", "1", './img/imagen4.jpg' ));
+  productos.push(new Producto(4, "Bluza", "4999", "1", './img/imagen5.jpg'));
+  productos.push(new Producto(5, "remera", "4999", "1", './img/imagen6.jpeg'));
+  productos.push(new Producto(6, "remera", "4999", "1", './img/imagen7.jpeg'));
+  productos.push(new Producto(7, "remera", "4999", "1",  './img/imagen8.jpeg'));
   
   for (const producto of productos)
     producto.sumaIva();
@@ -72,8 +73,25 @@ productos.forEach(producto => {
       console.log(boton);
       agregarAlCarrito(producto.id)
       console.log(carrito);
+    
+      // Swal.fire({
+      //   position: 'top',
+      //   icon: 'success',
+      //   title: 'Producto al carrito',
+      //   showConfirmButton: false,
+      //   timer: 1500
+      // })
+
+      Toastify({
+
+        text: "AL CARRITO!",
+        
+        duration: 1500
+        
+        }).showToast();
   
     })
+    
   
 })
     
@@ -114,6 +132,24 @@ const eliminarDelCarrito = (prodId) => {
     actualizarCarrito() 
     //MODIFICA EL CARRITO
     console.log(carrito)
+    
+    Swal.fire({
+      title: '¿Estas seguro?',
+      text: "Quitaremos el producto del carrito!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Quitar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      }
+    })
 }
 
 const actualizarCarrito = () => {
@@ -131,7 +167,9 @@ const actualizarCarrito = () => {
         <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
         <button onclick="eliminarDelCarrito(${prod.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
         `
-
+        
+        
+        
         contenedorCarrito.appendChild(div)
         
         localStorage.setItem('carrito', JSON.stringify(carrito))

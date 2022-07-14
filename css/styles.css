@@ -11,10 +11,10 @@ body {
 body{
     font-family: 'Roboto', sans-serif;
 }
-/* img {
+img {
     width: 100%;
     margin-bottom: 10px;
-} */
+}
 .header {
 background-color: #e6e6e6;
 position: sticky;
@@ -100,7 +100,7 @@ p {
 .boton-agregar:focus {
     outline: none;
 }
-
+/*MODAL*/
 .modal-contenedor {
     position: fixed;
     top: 0;
@@ -220,6 +220,27 @@ p {
       margin: 5px;
     }
 }
+
+/* CONTACTO */
+.contacto {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .contacto__form {
+    width: 60%;
+    padding: 15px;
+    background-color: #ffffff;
+    margin: 20px 0px 200px 0px;
+  }
+  .container__button--form {
+    display: flex;
+    justify-content: center;
+  }
 
 /* FOOTER */
 
